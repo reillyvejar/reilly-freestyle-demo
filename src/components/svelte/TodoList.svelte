@@ -23,6 +23,8 @@
 <br />
 <div>
   {#each items as item}
-    <TodoItem {item} />
+    <TodoItem {item} removeTodo={() => {
+      items = items.filter((any_item) => any_item.id != item.id);
+    }}/>
   {/each}
 </div>

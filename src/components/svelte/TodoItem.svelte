@@ -3,6 +3,7 @@
   import { TheTodoList, TodoItem } from "../../cloudstate/todo-list";
 
   export let item: { id: string; text: string; completed: boolean };
+  export let removeTodo: () => void;
 
   const todoItem = useCloud<typeof TodoItem>(item.id);
   const todoList = useCloud<typeof TheTodoList>("todo-list");
@@ -22,7 +23,7 @@
   <button
     on:click={() => {
     todoList.removeItem(item.id);
-    location.reload();
+    removeTodo();
   }}
   >
     Remove
