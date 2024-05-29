@@ -1,10 +1,11 @@
 <script lang="ts">
   import { useCloud } from "freestyle-sh";
-  import { TodoItem } from "../../cloudstate/todo-list";
+  import { TheTodoList, TodoItem } from "../../cloudstate/todo-list";
 
   export let item: { id: string; text: string; completed: boolean };
 
   const todoItem = useCloud<typeof TodoItem>(item.id);
+  const todoList = useCloud<typeof TheTodoList>("todo-list");
 </script>
 
 <div>
@@ -17,5 +18,13 @@
       });
     }}
   />
-  <span>{item.text}</span>
+  <span>{item.text}</span> &nbsp;
+  <button
+    on:click={() => {
+    todoList.removeItem(item.id);
+    location.reload();
+  }}
+  >
+    Remove
+  </button>
 </div>

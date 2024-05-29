@@ -1,13 +1,18 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { TheTodoList } from "../cloudstate/todo-list";
+import { TheCounter } from "../cloudstate/counter";
 import { useCloud } from "freestyle-sh";
 
-// import TodoList from "../components/svelte/TodoList.svelte";
-import TodoList from "../components/react/todo-list";
+import Counter from "../components/svelte/Counter.svelte";
+import TodoList from "../components/svelte/TodoList.svelte";
+// import TodoList from "../components/react/todo-list";
 
 const todoList = useCloud<typeof TheTodoList>("todo-list");
 const items = await todoList.getItems();
+
+const theCounter = useCloud<typeof TheCounter>("counter");
+const count = await theCounter.getCount();
 ---
 
 <Layout title="Freestyle Astro">
@@ -17,6 +22,11 @@ const items = await todoList.getItems();
       <TodoList client:load items={items} />
     </div>
   </main>
+  <br /><br />
+  <div class="counter">
+    <h1>Counter</h1>
+    <Counter client:load count={count} />
+  </div>
 </Layout>
 
 <style>
@@ -44,5 +54,13 @@ const items = await todoList.getItems();
   h1 {
     font-size: 2rem;
     margin-bottom: 1rem;
+  }
+
+  .counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    color: white;
   }
 </style>

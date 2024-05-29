@@ -1,4 +1,5 @@
 import { cloudstate } from "freestyle-sh";
+import type { createIncrementalCompilerHost } from "typescript";
 
 @cloudstate
 export class TheTodoList {
@@ -10,6 +11,10 @@ export class TheTodoList {
     const item = new TodoItem(text);
     this.items.push(item);
     return item;
+  }
+
+  removeItem(id: string) {
+    this.items = this.items.filter((item) => item.id != id);
   }
 
   getItems() {

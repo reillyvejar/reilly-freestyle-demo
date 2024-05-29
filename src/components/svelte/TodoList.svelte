@@ -20,9 +20,7 @@
 >
   Add Todo
 </button>
-
 <br />
-
 <div>
   {#each items as item}
     <TodoItem {item} />
