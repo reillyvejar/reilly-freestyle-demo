@@ -1,5 +1,4 @@
 import { cloudstate } from "freestyle-sh";
-import type { createIncrementalCompilerHost } from "typescript";
 
 @cloudstate
 export class TheCounter {
