@@ -8,13 +8,13 @@
 </script>
 
 <main>
-  <div>
+  <div class="rounded-md bg-slate-700 p-4 text-4xl">
     {count}
   </div>
 </main>
 <br />
 <div class="inline-buttons">
-  <button
+  <button class="rounded-md bg-slate-700 p-4 text-2xl"
   on:click={() => {
     theCounter.incrCount().then((new_count) => {
         count = new_count;
@@ -23,8 +23,8 @@
   >
   +
   </button>
-  &nbsp;
-  <button
+  &nbsp; &nbsp; &nbsp;
+  <button class="rounded-md bg-slate-700 p-4 text-2xl"
   on:click={() => {
       theCounter.decrCount().then((new_count) => {
         count = new_count;

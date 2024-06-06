@@ -10,6 +10,7 @@
 </script>
 
 <div>
+  <br />
   <input
     type="checkbox"
     bind:checked={item.completed}
@@ -19,8 +20,8 @@
       });
     }}
   />
-  <span>{item.text}</span> &nbsp;
-  <button
+  <span>{item.text}</span> &nbsp; &nbsp;
+  <button class="rounded-md bg-slate-700 p-1.5"
     on:click={() => {
     todoList.removeItem(item.id);
     removeTodo();

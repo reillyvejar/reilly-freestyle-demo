@@ -9,8 +9,9 @@
   let text = "";
 </script>
 
-<input type="text" bind:value={text} placeholder="Enter a new todo" />
-<button
+<input type="text" bind:value={text} placeholder="Enter a new todo" class="text-black p-2 text-center rounded-md"/>
+<br />
+<button class="rounded-md bg-slate-700 p-1.5"
   on:click={() => {
     todoList.addItem(text).then((item) => {
       text = "";

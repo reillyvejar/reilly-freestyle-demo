@@ -1,22 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { useCloud } from "freestyle-sh";
----
-
-<Layout title="Reilly Vejar">
-  <main class="min-h-screen bg-[#f7dfa1]">
-    <div>
-      <h1 class="text-center text-5xl whitespace-pre">
-        <a href="about" class="underline text-blue-700">
-          About
-        </a>
-      </h1>
-    </div>
-</main>
-</Layout>
-
-<!-- ---
-import Layout from "../layouts/Layout.astro";
 import { TheTodoList } from "../cloudstate/todo-list";
 import { TheCounter } from "../cloudstate/counter";
 import { useCloud } from "freestyle-sh";
@@ -42,7 +25,7 @@ const count = await theCounter.getCount();
   <br /><br />
   <div class="counter">
     <h1>Counter</h1>
-    <Counter client:load count={count} />
+    <Counter client:load count={count}/>
   </div>
 </Layout>
 
@@ -81,4 +64,3 @@ const count = await theCounter.getCount();
     color: white;
   }
 </style>
- -->
