@@ -1,0 +1,32 @@
+name: Deploy on Push
+
+on:
+    push:
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v3
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: '20'
+
+            - name: Install Dependencies
+              run: npm install
+
+            - name: Build Project
+              run: npx freestyle build
+
+            - name: Create ~/.freestyle.json
+              run: |
+                  echo -e '{\n  "session": "${{ secrets.USER_SECRET }}"\n}' > ~/.freestyle.json
+
+            - name: Deploy Project
+              run: npx freestyle deploy
+
+            - name: Finished Message
+              run: echo "Deployment complete."
