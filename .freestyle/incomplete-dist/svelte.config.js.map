@@ -1,0 +1,1 @@
+{"version":3,"file":"svelte.config.js","sourceRoot":"","sources":["../../svelte.config.js"],"names":[],"mappings":"AAAA,OAAO,EAAE,cAAc,EAAE,MAAM,iBAAiB,CAAC;AAEjD,eAAe;IACd,UAAU,EAAE,cAAc,EAAE;CAC5B,CAAA","sourcesContent":["import { vitePreprocess } from '@astrojs/svelte';\r\n\r\nexport default {\r\n\tpreprocess: vitePreprocess(),\r\n}\r\n"]}

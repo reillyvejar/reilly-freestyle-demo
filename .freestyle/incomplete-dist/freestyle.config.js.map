@@ -1,0 +1,1 @@
+{"version":3,"file":"freestyle.config.js","sourceRoot":"","sources":["../../freestyle.config.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,YAAY,EAAE,MAAM,cAAc,CAAC;AAE5C,eAAe,YAAY,CAAC,EAAE,CAAC,CAAC","sourcesContent":["import { defineConfig } from \"freestyle-sh\";\r\n\r\nexport default defineConfig({});"]}
